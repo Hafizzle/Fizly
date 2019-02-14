@@ -1,6 +1,8 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
+
+//Bundles of client side assets
 namespace Fizly
 {
     public class BundleConfig
@@ -23,7 +25,7 @@ namespace Fizly
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-lumen.css",
                       "~/Content/site.css"));
         }
     }
