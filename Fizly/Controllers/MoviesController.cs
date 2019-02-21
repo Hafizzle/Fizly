@@ -8,7 +8,12 @@ using Fizly.Models;
 namespace Fizly.Controllers
 {
     public class MoviesController : Controller
+
+
+        
     {
+
+        [Route("movies/released/{year}/{month:regex(\\d{4}):range(1, 12)}")]
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -16,6 +21,8 @@ namespace Fizly.Controllers
 
             return View(movie);
         }
+
+
 
         public ActionResult Edit(int id)//Edit is action, id is id
         {
@@ -32,6 +39,11 @@ namespace Fizly.Controllers
 
             return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
 
+        }
+
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
         }
         
 
